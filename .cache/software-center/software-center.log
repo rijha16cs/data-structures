@@ -1,0 +1,7 @@
+2017-10-06 17:08:26,933 - softwarecenter.backend.zeitgeist_logger - WARNING - Support for Zeitgeist disabled
+2017-10-06 17:08:27,041 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2017-10-06 17:08:30,606 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2017-10-06 17:08:31,356 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2017-10-06 17:08:31,373 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2017-10-06 17:08:31,547 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2017-10-06 17:08:42,055 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0

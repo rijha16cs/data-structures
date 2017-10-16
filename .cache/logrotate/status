@@ -1,0 +1,19 @@
+logrotate state -- version 2
+"/home/rishabh/.cache/upstart/gnome-keyring.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/indicator-bluetooth.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/ssh-agent.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/indicator-sound.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/unity-panel-service.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/upstart-dbus-session-bridge.log" 2017-3-17-20:3:6
+"/home/rishabh/.cache/upstart/upstart-event-bridge.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/gpg-agent.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/at-spi2-registryd.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/unity-panel-service-lockscreen.log" 2017-7-17-8:14:24
+"/home/rishabh/.cache/upstart/unity-settings-daemon.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/update-notifier-cds.log" 2017-3-17-20:3:6
+"/home/rishabh/.cache/upstart/window-stack-bridge.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/dbus.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/update-notifier-release.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/gnome-keyring-ssh.log" 2017-10-16-22:30:43
+"/home/rishabh/.cache/upstart/indicator-datetime.log" 2017-6-5-16:35:28
+"/home/rishabh/.cache/upstart/unity7.log" 2017-10-16-22:30:43

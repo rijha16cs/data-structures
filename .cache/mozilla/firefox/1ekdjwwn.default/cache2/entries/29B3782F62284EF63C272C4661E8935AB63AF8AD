@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="description" content="Stack data structure can be implemented by using Linked List to make it work for infinite number of data values">
+<meta name="keywords" content="Stack using Linked list,stack using linked list by rajinikanth,Data structures by Rajinikanth,Datastructures using C">
+<meta name="author" content="Rajinikanth">
+<title>Stack using Linked List - Data Structures</title>
+<link href="CSS/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+	<div id="container">
+    	<div id="header">
+        	<div id="logo">
+            <img src="images/Logo.png" />
+        	</div> <!-- logo End -->
+            <div id="banner">
+            	<h1 class="subjectTitle">DATA STRUCTURES</h1>
+        	</div> <!-- banner End -->
+        </div> <!-- header End -->
+        <div id="content">
+        	
+        	<div id="menu">
+            	<a href="../index.html"><img src="images/Home 1.png" class="menuIcon"/> HOME</a>
+            	<a href="../subjects.html"><img src="images/Subjects 1.png" class="menuIcon"/> SUBJECTS</a>
+            	<a href="../downloads.html"><img src="images/Download 1.png" class="menuIcon"/> DOWNLOADS</a>
+            	<a href="../authors.html"><img src="images/Authors 1.png" class="menuIcon"/> AUTHORS</a>
+            	<a href="../contact.html"><img src="images/Contact 1.png" class="menuIcon"/> CONTACT US</a>
+        	</div> <!-- menu End -->
+            <span class="nav-btn"></span>
+            <div id="menuMobile">
+            	<a href="../index.html"><img src="images/Home 1.png" class="menuIcon"/></a>
+            	<a href="../subjects.html"><img src="images/Subjects 1.png" class="menuIcon"/></a>
+            	<a href="../downloads.html"><img src="images/Download 1.png" class="menuIcon"/></a>
+        	</div> <!-- menuMobile End -->
+            
+            <div id="navigator">
+            	<ul class="nav">
+                    <li ><strong class="unitTitle">UNIT 1<br /></strong><a href="U1_T1.html">Introduction to Algorithm</a></li>
+                    <li ><a href="U1_T2.html">Performance Analysis</a></li>
+                    <li ><a href="U1_T3.html">Space Complexity</a></li>
+                    <li ><a href="U1_T4.html">Time Complexity</a></li>
+                    <li ><a href="U1_T5.html">Asymptotic Notations</a></li>
+                    <li ><a href="U1_T9.html">Linear &amp; Non-Linear Data Structures</a></li>
+                    <li ><a href="U1_T10.html">Single Linked List</a></li>
+                    <li ><a href="U1_T11.html">Circular Linked List</a></li>
+                    <li ><a href="U1_T12.html">Double Linked List</a></li>
+                    <li ><a href="U1_T13.html">Introduction to Array</a></li>
+                    <li ><a href="U1_T14.html">Array Representation</a></li>
+                    <li ><strong class="unitTitle">UNIT 2<br /></strong><a href="U2_T1.html">Stack ADT</a></li>
+                    <li ><a href="U2_T2.html">Stack Using Array</a></li>
+                    <li class="active"><a href="U2_T3.html">Stack Using Linked List</a></li>
+                    <li ><a href="U2_T4.html">Expressions</a></li>
+                    <li ><a href="U2_T5.html">Infix to Postfix</a></li>
+                    <li ><a href="U2_T6.html">Postfix Evaluation</a></li>
+                    <li ><a href="U2_T7.html">Queue ADT</a></li>
+                    <li ><a href="U2_T8.html">Queue Using Array</a></li>
+                    <li ><a href="U2_T9.html">Queue Using Linked List</a></li>
+                    <li ><a href="U2_T10.html">Circular Queue</a></li>
+                    <li ><a href="U2_T11.html">Double Ended Queue</a></li>
+                    <li ><strong class="unitTitle">UNIT 3<br /></strong><a href="U3_T1.html">Tree - Terminology</a></li>
+                    <li ><a href="U3_T2.html">Tree Representations</a></li>
+                    <li ><a href="U3_T3.html">Binary Tree</a></li>
+                    <li ><a href="U3_T31.html">Binary Tree Representations</a></li>
+                    <li ><a href="U3_T4.html">Binary Tree Traversals</a></li>
+                    <li ><a href="U3_T5.html">Threaded Binary trees</a></li>
+                    <li ><a href="U3_T6.html">Max Priority Queue</a></li>
+                    <li ><a href="U3_T7.html">Max Heap</a></li>
+                    <li ><a href="U3_T8.html">Introduction to Graphs</a></li>
+                    <li ><a href="U3_T9.html">Graph Representations</a></li>
+                    <li ><a href="U3_T10.html">Graph Traversal - DFS</a></li>
+                    <li ><a href="U3_T11.html">Graph Traversal - BFS</a></li>    
+                    <li ><strong class="unitTitle">UNIT 4<br /></strong><a href="U4_T1.html">Linear Search</a></li>
+                    <li ><a href="U4_T2.html">Binary Search</a></li>
+                    <li ><a href="U4_T3.html">Hashing</a></li>
+                    <li ><a href="U4_T4.html">Insertion Sort</a></li>
+                    <li ><a href="U4_T5.html">Selection Sort</a></li>
+                    <li ><a href="U4_T6.html">Radix Sort</a></li>
+                    <li ><a href="U4_T7.html">Quick Sort</a></li>
+                    <li ><a href="U4_T8.html">Heap Sort</a></li>
+                    <li ><a href="U4_T9.html">Comparison of Sorting Methods</a></li>
+                    <li ><strong class="unitTitle">UNIT 5<br /></strong><a href="U5_T1.html">Binary Search Tree</a></li>
+                    <li ><a href="U5_T2.html">AVL Trees</a></li>
+                    <li ><a href="U5_T3.html">B - Trees</a></li>
+                    <li ><a href="U5_T4.html">Red - Black Trees</a></li>
+                    <li ><a href="U5_T5.html">Splay Trees</a></li>
+                    <li ><a href="U5_T6.html">Comparison of Search Trees</a></li>
+                    <li ><a href="U5_T7.html">Knuth-Morris-Pratt Algorithm</a></li>
+                    <li ><a href="U5_T8.html">Tries</a></li>       
+                </ul>
+        	</div> <!-- navigator End -->
+            <div id="data">
+            	<div id="topicHeader">
+                	<a href="U2_T2.html"><img src="images/Previous.png" class="previous" /></a><h1 class="topicTitle">Stack using Linked List</h1><a href="U2_T4.html"><img src="images/Next.png" class="next" /></a>
+        		</div> <!-- topicHeader End -->
+                <div id="actualData">
+                
+<p class="data"><br />The major problem with the stack implemented using array is, it works only for fixed number of data values. That means the amount of data must be specified at the beginning of the implementation itself. Stack implemented using array is not suitable, when we don't know the size of data which we are going to use. A stack data structure can be implemented by using linked list data structure. The stack implemented using linked list can work for unlimited number of values. That means, stack implemented using linked list works for variable size of data. So, there is no need to fix the size at the beginning of the implementation. The Stack implemented using linked list can organize as many data values as we want. <br /><br />In linked list implementation of a stack,  every new element is inserted as '<strong>top</strong>' element. That means every  newly inserted element is pointed by '<strong>top</strong>'. Whenever we want to remove an element from the stack, simply remove the node which is pointed by '<strong>top</strong>' by moving '<strong>top</strong>' to its next node in the list. The <strong>next</strong> field of the first element must be always <strong>NULL</strong>.</p>
+<h1 class="example">Example</h1>
+<center><img src="images/U2_T1_P3.png" class="smallImage" /></center>
+<p class="data">In above example, the last inserted node is 99 and the first inserted node is 25. The order of elements inserted is 25, 32,50 and 99.</p>
+<h1 class="question">Operations</h1>
+<p class="data">To implement stack using linked list, we need to set the following things before implementing actual operations.</p>
+<ul class="steps">
+	<li><strong class="step">Step 1:</strong> Include all the <strong>header files</strong> which are used in the program. And declare all the <strong>user defined functions</strong>.</li>
+    <li><strong class="step">Step 2:</strong> Define a '<strong>Node</strong>' structure with two members <strong>data</strong> and <strong>next</strong>.</li>
+    <li><strong class="step">Step 3:</strong> Define a <strong>Node</strong> pointer '<strong>top</strong>' and set it to <strong>NULL</strong>.</li>
+    <li><strong class="step">Step 4:</strong> Implement the <strong>main</strong> method by displaying Menu with list of operations and make suitable function calls in the <strong>main</strong> method.</li>
+</ul>
+<h1 class="subHeading">push(value) - Inserting an element into the Stack</h1>
+<p class="data">We can use the following steps to insert a new node into the stack...</p>
+<ul class="steps">
+	<li><strong class="step">Step 1:</strong> Create a <strong>newNode</strong> with given value.</li>
+    <li><strong class="step">Step 2:</strong> Check whether stack is <strong>Empty</strong> (<strong>top</strong> == <strong>NULL</strong>)</li>
+    <li><strong class="step">Step 3:</strong> If it is <strong>Empty</strong>, then set <strong>newNode &rarr; next</strong> = <strong>NULL</strong>.</li>
+    <li><strong class="step">Step 4:</strong> If it is <strong>Not Empty</strong>, then set <strong>newNode &rarr; next</strong> = <strong>top</strong>.</li>
+    <li><strong class="step">Step 5:</strong> Finally, set <strong>top</strong> = <strong>newNode</strong>.</li>
+</ul>
+
+<h1 class="subHeading">pop() - Deleting an Element from a Stack</h1>
+<p class="data">We can use the following steps to delete a node from the stack...</p>
+<ul class="steps">
+	<li><strong class="step">Step 1:</strong> Check whether <strong>stack</strong> is <strong>Empty</strong> (<strong>top == NULL</strong>).</li>
+    <li><strong class="step">Step 2:</strong> If it is <strong>Empty</strong>, then display <strong>"Stack is Empty!!! Deletion is not possible!!!"</strong> and terminate the function</li>
+    <li><strong class="step">Step 3:</strong> If it is <strong>Not Empty</strong>, then define a <strong>Node</strong> pointer '<strong>temp</strong>' and set it to '<strong>top</strong>'.</li>
+    <li><strong class="step">Step 4:</strong> Then set '<strong>top</strong> = <strong>top &rarr; next</strong>'.</li>
+	<li><strong class="step">Step 7:</strong> Finally, delete '<strong>temp</strong>' (<strong>free(temp)</strong>).</li>
+</ul>
+
+<h1 class="subHeading">display() - Displaying stack of elements</h1>
+<p class="data">We can use the following steps to display the elements (nodes) of a stack...</p>
+<ul class="steps">
+    <li><strong class="step">Step 1:</strong> Check whether stack is <strong>Empty</strong> (<strong>top</strong> == <strong>NULL</strong>).</li>
+    <li><strong class="step">Step 2:</strong> If it is <strong>Empty</strong>, then display <strong>'Stack is Empty!!!'</strong> and terminate the function.</li>
+    <li><strong class="step">Step 3:</strong> If it is <strong>Not Empty</strong>, then define a Node pointer <strong>'temp'</strong> and initialize with <strong>top</strong>.</li>
+    <li><strong class="step">Step 4:</strong> Display '<strong>temp &rarr; data</strong> --->' and move it to the next node. Repeat the same until <strong>temp</strong> reaches to the first node in the stack (<strong>temp &rarr; next</strong> != <strong>NULL</strong>).</li>
+    <li><strong class="step">Step 4:</strong> Finally! Display '<strong>temp &rarr; data</strong> ---> <strong>NULL</strong>'.</li>
+</ul>
+
+<h1 class="question">Program for Stack Using Linked List</h1>
+<div class="codebox">
+	<pre>
+    <code>   
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+struct Node
+{
+   int data;
+   struct Node *next;
+}*top = NULL;
+
+void push(int);
+void pop();
+void display();
+
+void main()
+{
+   int choice, value;
+   clrscr();
+   printf("\n:: Stack using Linked List ::\n");
+   while(1){
+      printf("\n****** MENU ******\n");
+      printf("1. Push\n2. Pop\n3. Display\n4. Exit\n");
+      printf("Enter your choice: ");
+      scanf("%d",&choice);
+      switch(choice){
+	 case 1: printf("Enter the value to be insert: ");
+		 scanf("%d", &value);
+		 push(value);
+		 break;
+	 case 2: pop(); break;
+	 case 3: display(); break;
+	 case 4: exit(0);
+	 default: printf("\nWrong selection!!! Please try again!!!\n");
+      }
+   }
+}
+void push(int value)
+{
+   struct Node *newNode;
+   newNode = (struct Node*)malloc(sizeof(struct Node));
+   newNode->data = value;
+   if(top == NULL)
+      newNode->next = NULL;
+   else
+      newNode->next = top;
+   top = newNode;
+   printf("\nInsertion is Success!!!\n");
+}
+void pop()
+{
+   if(top == NULL)
+      printf("\nStack is Empty!!!\n");
+   else{
+      struct Node *temp = top;
+      printf("\nDeleted element: %d", temp->data);
+      top = temp->next;
+      free(temp);
+   }
+}
+void display()
+{
+   if(top == NULL)
+      printf("\nStack is Empty!!!\n");
+   else{
+      struct Node *temp = top;
+      while(temp->next != NULL){
+	 printf("%d--->",temp->data);
+	 temp = temp -> next;
+      }
+      printf("%d--->NULL",temp->data);
+   }
+}    </code>
+    </pre>
+</div>
+<h1 class="subHeading">Output</h1>
+<center><img src="images/STKLL1.PNG" class="mediumImage"/></center><br />
+<center><img src="images/STKLL2.PNG" class="mediumImage"/></center>
+                
+                
+<div class="bottomNav">
+    <a href="U2_T2.html"><p class="BtnPrevious">&larr; Previous</p></a>
+    <a href="U2_T4.html"><p class="BtnNext">Next &rarr; </p></a>
+</div> <!-- bottomNav End -->                          
+                
+                
+        		</div> <!-- actualData End -->
+        	</div> <!-- data End -->
+        </div> <!-- content End -->
+        <div id="footer">
+        	<a href="#">About Us</a>&nbsp;&nbsp;&nbsp;<strong>&brvbar;</strong>&nbsp;&nbsp;&nbsp;<a href="#">Contact Us</a><br  />
+            <p>Website designed by RAJINIKANTH B</p>
+            <a href="#"><img src="images/FaceBook.png" /></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><img src="images/Twitter.png" /></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><img src="images/GPlus.png" /></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><img src="images/Youtube.png" /></a>
+        </div> <!-- footer End -->
+    </div><!-- container End -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+    
+		$('span.nav-btn').click(function(){
+		
+			$('ul.nav').toggle();
+		
+		});
+    
+    </script>
+</body>
+</html>dw√xt      Y‰Ê–Y‰Ê—>OSÔZG–e   ):http://btechsmartclass.com/DS/U2_T3.html necko:classified 1 request-method GET request-Accept-Encoding gzip, deflate request-User-Agent Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 response-head HTTP/1.1 200 OK
+Date: Mon, 16 Oct 2017 17:05:21 GMT
+Server: Apache
+Last-Modified: Sun, 27 Sep 2015 10:37:42 GMT
+Etag: "ae040c-39dd-520b82bb37a40-gzip"
+Accept-Ranges: bytes
+Vary: Accept-Encoding,User-Agent
+Content-Type: text/html
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 17 predictor::http://btechsmartclass.com/DS/CSS/style.css 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Logo.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Home%201.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Subjects%201.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Download%201.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Authors%201.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Contact%201.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Previous.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Next.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/U2_T1_P3.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/STKLL1.PNG 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/STKLL2.PNG 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/FaceBook.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Twitter.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/GPlus.png 1,1,1508173520,0 predictor::http://btechsmartclass.com/DS/images/Youtube.png 1,1,1508173520,0 predictor::https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js 1,1,1508173520,0   9›

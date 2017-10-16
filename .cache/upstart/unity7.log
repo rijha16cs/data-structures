@@ -1,0 +1,26 @@
+
+(process:2444): GLib-CRITICAL **: g_slice_set_config: assertion 'sys_page_size == 0' failed
+console.error: 
+  Corrupt session file (invalid JSON found) 
+  Message: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+  Stack:
+    SessionFileInternal.read<@resource:///modules/sessionstore/SessionFile.jsm:201:22
+TaskImpl_run@resource://gre/modules/Task.jsm:314:40
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:922:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:740:39
+
+  SessionFileInternal.read<@resource:///modules/sessionstore/SessionFile.jsm:201:22
+TaskImpl_run@resource://gre/modules/Task.jsm:314:40
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:922:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:801:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:740:39
+
+
+(nautilus:2529): Gtk-CRITICAL **: gtk_icon_theme_get_for_screen: assertion 'GDK_IS_SCREEN (screen)' failed
+
+(nautilus:2529): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(nautilus:2529): GLib-GObject-CRITICAL **: g_signal_connect_object: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+1508173665559	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+ATTENTION: default value of option force_s3tc_enable overridden by environment.

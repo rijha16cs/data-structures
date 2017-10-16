@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"
+>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortlink" href="/node/81" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/c-program-multiply-matrices" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cleartype" content="on" />
+  <title>Matrix multiplication in c | Programming Simplified</title>
+  <link type="text/css" rel="stylesheet" href="http://www.programmingsimplified.com/sites/default/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.programmingsimplified.com/sites/default/files/css/css_sdyyIuqV_D0sgcuYxlQjQRjXrhAHul_ByaHN6dBpqGw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.programmingsimplified.com/sites/default/files/css/css_Ds030rLfnsqdi3NJi-7JllRKrDJz3mqdU5yL7SYaOoI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.programmingsimplified.com/sites/default/files/css/css_aHxFlgErLhOwUJC26IDHkKZ7KDXyVbALH1ffVfmRelU.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.programmingsimplified.com/sites/default/files/css/css_2THG1eGiBIizsWFeexsNe1iDifJ00QRS9uSd03rY9co.css" media="print" />
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.google_analytics_uacct = "UA-33793267-1";
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://www.programmingsimplified.com/sites/default/files/js/js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js"></script>
+<script type="text/javascript" src="http://www.programmingsimplified.com/sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-33793267-1", {"cookieDomain":"auto"});ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.a2a_config=window.a2a_config||{};window.da2a={done:false,html_done:false,script_ready:false,script_load:function(){var a=document.createElement('script'),s=document.getElementsByTagName('script')[0];a.type='text/javascript';a.async=true;a.src='https://static.addtoany.com/menu/page.js';s.parentNode.insertBefore(a,s);da2a.script_load=function(){};},script_onready:function(){da2a.script_ready=true;if(da2a.html_done)da2a.init();},init:function(){for(var i=0,el,target,targets=da2a.targets,length=targets.length;i<length;i++){el=document.getElementById('da2a_'+(i+1));target=targets[i];a2a_config.linkname=target.title;a2a_config.linkurl=target.url;if(el){a2a.init('page',{target:el});el.id='';}da2a.done=true;}da2a.targets=[];}};(function ($){Drupal.behaviors.addToAny = {attach: function (context, settings) {if (context !== document && window.da2a) {if(da2a.script_ready)a2a.init_all('page');da2a.script_load();}}}})(jQuery);a2a_config.callbacks=a2a_config.callbacks||[];a2a_config.callbacks.push({ready:da2a.script_onready});a2a_config.templates=a2a_config.templates||{};a2a_config.no_3p = 1;
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://www.programmingsimplified.com/sites/default/files/js/js_Ofj7l77ezpDbolpobDa4RheMhVKbTyVzE5npFE8teE4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"responsive_bartik","theme_token":"AuUAsGahpNuZDmn-z79RkBELlqrfahX3K8O-2bSTaVg","js":{"0":1,"1":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"2":1,"3":1,"sites\/all\/themes\/responsive_bartik\/js\/collapsible-menu.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/geshifilter\/geshifilter.css":1,"sites\/all\/modules\/addtoany\/addtoany.css":1,"sites\/all\/themes\/responsive_bartik\/css\/layout.css":1,"sites\/all\/themes\/responsive_bartik\/css\/style.css":1,"sites\/all\/themes\/responsive_bartik\/css\/colors.css":1,"sites\/all\/themes\/responsive_bartik\/css\/print.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});
+//--><!]]>
+</script>
+  <!--[if (gte IE 6)&(lte IE 8)]>
+    <script src="/sites/all/themes/responsive_bartik/js/selectivizr-min.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+    <script src="/sites/all/themes/responsive_bartik/js/html5-respond.js"></script>
+  <![endif]-->
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-81 node-type-c" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page-wrapper"><div id="page">
+
+  <header id="header" role="banner" class="without-secondary-menu"><div class="section clearfix">
+        
+    
+          <a href="/" title="Home" rel="home" id="logo">
+        <img src="http://www.programmingsimplified.com/sites/default/files/logo_1_0.png" alt="Home" />
+      </a>
+    
+          <div id="name-and-slogan" class="element-invisible">
+
+                              <div id="site-name" class="element-invisible">
+              <strong>
+                <a href="/" title="Home" rel="home"><span>Programming Simplified</span></a>
+              </strong>
+            </div>
+                  
+                  <div id="site-slogan" class="element-invisible">
+            c c++ and java programming tutorials and programs          </div>
+        
+      </div> <!-- /#name-and-slogan -->
+    
+      <div class="region region-header">
+    <div id="block-block-71" class="block block-block">
+
+    
+  <div class="content">
+    <form action="http://www.google.co.in" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-0388429284943625:1786624640" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="20" />
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+
+<script type="text/javascript" src="http://www.google.co.in/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+  </div>
+</div>
+  </div>
+
+          <nav id="main-menu" role="navigation" class="navigation">
+        <h2 class="element-invisible">Main menu</h2><ul id="main-menu-links" class="links clearfix"><li class="menu-119 first"><a href="/" title="Home">Home</a></li>
+<li class="menu-6487"><a href="/programming-books" title="Buy Programming Books">Programming Books</a></li>
+<li class="menu-1686"><a href="/c" title="C Programming">C Programming</a></li>
+<li class="menu-120"><a href="/Tutorials" title="C Programming Tutorials">Tutorials</a></li>
+<li class="menu-121"><a href="/c/graphics.h" title="C Graphics">C Graphics</a></li>
+<li class="menu-1115"><a href="/source-codes" title="Source codes">Source codes</a></li>
+<li class="menu-1629"><a href="/submit-program" title="Submit your source code or program">Submit Program</a></li>
+<li class="menu-1924 last"><a href="http://www.facebook.com/programmingsimplified" title="">Facebook</a></li>
+</ul>      </nav> <!-- /#main-menu -->
+      </div></header> <!-- /.section, /#header -->
+
+  
+  
+  <div id="main-wrapper" class="clearfix"><div id="main" role="main" class="clearfix">
+
+    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a> » <a href="/c">C programming</a> » <a href="/c-program-examples">C programming examples</a> » Matrix multiplication in c</div>
+    <div id="content" class="column"><div class="section">
+            <a id="main-content"></a>
+                    <h1 class="title" id="page-title">
+          Matrix multiplication in c        </h1>
+                          <div class="tabs">
+                  </div>
+              <div class="region region-help">
+    <div id="block-block-92" class="block block-block">
+
+    
+  <div class="content">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 9RFR -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0388429284943625"
+     data-ad-slot="8674447449"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+  </div>
+              <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <article id="node-81" class="node node-c node-full clearfix" role="article">
+
+      
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Matrix multiplication in c language: c program to multiply matrices (two dimensional array), this program multiplies two matrices which will be entered by the user. Firstly user will enter the order of a matrix. If the entered orders of two matrix is such that they can't be multiplied then an error message is displayed on the screen. You have already studied the logic to multiply them in Mathematics. </p>
+<h2>Matrix multiplication in c language</h2>
+<div class="geshifilter">
+<pre class="c geshifilter-c" style="font-family:monospace;"><span style="color: #339933;">#include &lt;stdio.h&gt;</span>
+ 
+<span style="color: #993333;">int</span> main<span style="color: #009900;">(</span><span style="color: #009900;">)</span>
+<span style="color: #009900;">{</span>
+  <span style="color: #993333;">int</span> m<span style="color: #339933;">,</span> n<span style="color: #339933;">,</span> p<span style="color: #339933;">,</span> q<span style="color: #339933;">,</span> c<span style="color: #339933;">,</span> d<span style="color: #339933;">,</span> k<span style="color: #339933;">,</span> sum <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span>
+  <span style="color: #993333;">int</span> first<span style="color: #009900;">[</span><span style="color: #0000dd;">10</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #0000dd;">10</span><span style="color: #009900;">]</span><span style="color: #339933;">,</span> second<span style="color: #009900;">[</span><span style="color: #0000dd;">10</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #0000dd;">10</span><span style="color: #009900;">]</span><span style="color: #339933;">,</span> multiply<span style="color: #009900;">[</span><span style="color: #0000dd;">10</span><span style="color: #009900;">]</span><span style="color: #009900;">[</span><span style="color: #0000dd;">10</span><span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+ 
+  <span style="color: #000066;">printf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"Enter the number of rows and columns of first matrix<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+  <span style="color: #000066;">scanf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"%d%d"</span><span style="color: #339933;">,</span> <span style="color: #339933;">&amp;</span>m<span style="color: #339933;">,</span> <span style="color: #339933;">&amp;</span>n<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+  <span style="color: #000066;">printf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"Enter the elements of first matrix<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+ 
+  <span style="color: #b1b100;">for</span> <span style="color: #009900;">(</span>c <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> c <span style="color: #339933;">&lt;</span> m<span style="color: #339933;">;</span> c<span style="color: #339933;">++</span><span style="color: #009900;">)</span>
+    <span style="color: #b1b100;">for</span> <span style="color: #009900;">(</span>d <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> d <span style="color: #339933;">&lt;</span> n<span style="color: #339933;">;</span> d<span style="color: #339933;">++</span><span style="color: #009900;">)</span>
+      <span style="color: #000066;">scanf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"%d"</span><span style="color: #339933;">,</span> <span style="color: #339933;">&amp;</span>first<span style="color: #009900;">[</span>c<span style="color: #009900;">]</span><span style="color: #009900;">[</span>d<span style="color: #009900;">]</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+ 
+  <span style="color: #000066;">printf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"Enter the number of rows and columns of second matrix<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+  <span style="color: #000066;">scanf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"%d%d"</span><span style="color: #339933;">,</span> <span style="color: #339933;">&amp;</span>p<span style="color: #339933;">,</span> <span style="color: #339933;">&amp;</span>q<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+ 
+  <span style="color: #b1b100;">if</span> <span style="color: #009900;">(</span>n <span style="color: #339933;">!=</span> p<span style="color: #009900;">)</span>
+    <span style="color: #000066;">printf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"Matrices with entered orders can't be multiplied with each other.<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+  <span style="color: #b1b100;">else</span>
+  <span style="color: #009900;">{</span>
+    <span style="color: #000066;">printf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"Enter the elements of second matrix<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+ 
+    <span style="color: #b1b100;">for</span> <span style="color: #009900;">(</span>c <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> c <span style="color: #339933;">&lt;</span> p<span style="color: #339933;">;</span> c<span style="color: #339933;">++</span><span style="color: #009900;">)</span>
+      <span style="color: #b1b100;">for</span> <span style="color: #009900;">(</span>d <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> d <span style="color: #339933;">&lt;</span> q<span style="color: #339933;">;</span> d<span style="color: #339933;">++</span><span style="color: #009900;">)</span>
+        <span style="color: #000066;">scanf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"%d"</span><span style="color: #339933;">,</span> <span style="color: #339933;">&amp;</span>second<span style="color: #009900;">[</span>c<span style="color: #009900;">]</span><span style="color: #009900;">[</span>d<span style="color: #009900;">]</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+ 
+    <span style="color: #b1b100;">for</span> <span style="color: #009900;">(</span>c <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> c <span style="color: #339933;">&lt;</span> m<span style="color: #339933;">;</span> c<span style="color: #339933;">++</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+      <span style="color: #b1b100;">for</span> <span style="color: #009900;">(</span>d <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> d <span style="color: #339933;">&lt;</span> q<span style="color: #339933;">;</span> d<span style="color: #339933;">++</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+        <span style="color: #b1b100;">for</span> <span style="color: #009900;">(</span>k <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> k <span style="color: #339933;">&lt;</span> p<span style="color: #339933;">;</span> k<span style="color: #339933;">++</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+          sum <span style="color: #339933;">=</span> sum <span style="color: #339933;">+</span> first<span style="color: #009900;">[</span>c<span style="color: #009900;">]</span><span style="color: #009900;">[</span>k<span style="color: #009900;">]</span><span style="color: #339933;">*</span>second<span style="color: #009900;">[</span>k<span style="color: #009900;">]</span><span style="color: #009900;">[</span>d<span style="color: #009900;">]</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span>
+ 
+        multiply<span style="color: #009900;">[</span>c<span style="color: #009900;">]</span><span style="color: #009900;">[</span>d<span style="color: #009900;">]</span> <span style="color: #339933;">=</span> sum<span style="color: #339933;">;</span>
+        sum <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span>
+      <span style="color: #009900;">}</span>
+    <span style="color: #009900;">}</span>
+ 
+    <span style="color: #000066;">printf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"Product of entered matrices:-<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+ 
+    <span style="color: #b1b100;">for</span> <span style="color: #009900;">(</span>c <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> c <span style="color: #339933;">&lt;</span> m<span style="color: #339933;">;</span> c<span style="color: #339933;">++</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+      <span style="color: #b1b100;">for</span> <span style="color: #009900;">(</span>d <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> d <span style="color: #339933;">&lt;</span> q<span style="color: #339933;">;</span> d<span style="color: #339933;">++</span><span style="color: #009900;">)</span>
+        <span style="color: #000066;">printf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"%d<span style="color: #000099; font-weight: bold;">\t</span>"</span><span style="color: #339933;">,</span> multiply<span style="color: #009900;">[</span>c<span style="color: #009900;">]</span><span style="color: #009900;">[</span>d<span style="color: #009900;">]</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+ 
+      <span style="color: #000066;">printf</span><span style="color: #009900;">(</span><span style="color: #ff0000;">"<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">}</span>
+  <span style="color: #009900;">}</span>
+ 
+  <span style="color: #b1b100;">return</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre></div>
+<p>Download <a href="/executable/c/matrix-multiplication.exe">Matrix multiplication</a> program.</p>
+<p>A 3 X 3 matrix multiply  in c is shown as example below.<br />
+<img src="/images/c/matrix-multiplication-c.png" alt="Matrix multiplication program" /></p>
+<p>Matrices are frequently used while doing programming and are used to represent graph data structure, in solving system of linear equations and many more. Lot of research is being done on how to multiply matrices using minimum number of operations. You can also implement it using pointers.</p>
+</div></div></div>  </div>
+
+  
+  
+</article>
+  </div>
+</div>
+<div id="block-block-93" class="block block-block">
+
+    
+  <div class="content">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-0388429284943625"
+     data-ad-slot="4715222641"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+  </div>
+      
+    </div></div> <!-- /.section, /#content -->
+
+        
+          <div id="sidebar-second" class="column sidebar"><div class="section">
+          <div class="region region-sidebar-second">
+    <div id="block-addtoany-addtoany-button" class="block block-addtoany">
+
+    
+  <div class="content">
+    <span class="a2a_kit a2a_kit_size_32 a2a_target addtoany_list" id="da2a_1">
+      
+      <a class="a2a_dd addtoany_share_save" href="https://www.addtoany.com/share#url=http%3A%2F%2Fwww.programmingsimplified.com%2Fc-program-multiply-matrices&amp;title=Matrix%20multiplication%20in%20c"><img src="/sites/all/modules/addtoany/images/share_save_171_16.png" width="171" height="16" alt="Share this"/></a>
+      
+    </span>
+    <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if(window.da2a)da2a.script_load();
+//--><!]]>
+</script>  </div>
+</div>
+<nav id="block-menu-secondary-menu" class="block block-menu" role="navigation">
+
+    
+  <div class="content">
+    <ul class="menu clearfix"><li class="first leaf"><a href="http://www.programmingsimplified.com/c/c-mouse-programs" title="C Mouse Programs">C Mouse Programs</a></li>
+<li class="leaf"><a href="/c-program-examples" title="C programming examples">C programming examples</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/c-games-and-projects" title="C Source codes">C Source codes</a></li>
+<li class="leaf"><a href="/java-source-codes" title="Java programs">Java programs</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/c/graphics.h" title="graphics.h">graphics.h</a></li>
+<li class="leaf"><a href="http://www.programmingsimplified.com/c/program/graphics" title="C graphics programs">C graphics programs</a></li>
+<li class="leaf"><a href="/c/conio.h" title="conio.h">conio.h</a></li>
+<li class="leaf"><a href="/c/math.h" title="math.h in c">math.h</a></li>
+<li class="last leaf"><a href="/c/dos.h" title="dos.h">dos.h</a></li>
+</ul>  </div>
+</nav>
+<div id="block-block-96" class="block block-block">
+
+    
+  <div class="content">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 9RRS -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0388429284943625"
+     data-ad-slot="1639145040"
+     data-ad-format="rectangle"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+<div id="block-block-18" class="block block-block">
+
+    <h2>C programming examples</h2>
+  
+  <div class="content">
+    <p><a href="/c-hello-world-program" title="C Hello World Program">Hello world</a><br />
+<a href="/c/program/print-integer" title="C program print integer">Print Integer</a><br />
+<a href="/c-program-add-two-numbers" title="C Program To Add Two Numbers">Addition</a><br />
+<a href="/c/source-code/c-program-check-odd-even" title="C program to check odd or even">Odd or Even</a><br />
+<a href="/c/program/addition-subtraction-multiplication-and-division" title="C Program To Add, subtract multiply and divide two numbers">Add, subtract, multiply and divide</a><br />
+<a href="/c/source-code/c-program-check-vowel" title="c program to check if input alphabet is a vowel or not.">Check vowel</a><br />
+<a href="/c/source-code/c-program-check-leap-year" title="C program to check leap year">Leap year</a><br />
+<a href="/c/program/c-program-add-number-digits" title="C program to add digits of a number">Add digits</a><br />
+<a href="/c-program-find-factorial" title="C Program To Find Factorial">Factorial</a><br />
+<a href="/c/source-code/c-program-find-hcf-and-lcm" title="C program to find hcf and lcm">HCF and LCM</a><br />
+<a href="/c/source-code/c-program-convert-decimal-to-binary" title="C program to convert decimal to binary">Decimal to binary conversion</a><br />
+<a href="/c/source-code/c-program-find-ncr-and-npr" title="C program to find nCr and nPr">ncR and nPr</a><br />
+<a href="/c-program-add-n-numbers" title="C Program To Add N Numbers">Add n numbers</a><br />
+<a href="/c-program-swap-two-numbers" title="C Program To Swap Numbers">Swapping</a><br />
+<a href="/c/source-code/c-program-reverse-number" title="c program to reverse number">Reverse number</a><br />
+<a href="/c/source-code/c-program-palindrome-number" title="C program to check palindrome number">Palindrome number</a><br />
+<a href="/c-program-print-stars-pyramid" title="C Program To Print patterns ( numbers, stars and characters) ">Print Pattern</a><br />
+<a href="/c/source-code/c-program-print-diamond-pattern" title="C program to print diamond pattern">Diamond</a><br />
+<a href="/c/source-code/c-program-for-prime-number" title="c program for prime number">Prime numbers</a><br />
+<a href="/c-program-find-armstrong-number" title="C Program TO Find Armstrong Number">Find armstrong number</a><br />
+<a href="/c-program-generate-armstrong-number" title="C Program To Generate Armstrong Number">Generate armstrong number</a><br />
+<a href="/c-program-generate-fibonacci-series" title="C Program for Fibonacci Series with and without recursion">Fibonacci series </a><br />
+<a href="/c-program-print-floyd-triangle" title="C Program To Print Floyd's Triangle">Print floyd's triangle</a><br />
+<a href="/c-program-print-pascal-triangle" title="C Program To Print Pascal Triangle">Print pascal triangle</a><br />
+<a href="/c-program-add-two-numbers-using-pointers" title="C Program To Add Two Numbers Using Pointers">Addition using pointers</a><br />
+<a href="/c/source-code/c-program-find-maximum-element-in-array" title="C program to find maximum element in array">Maximum element in array</a><br />
+<a href="/c/source-code/c-program-find-minimum-element-in-array" title="C program to find minimum element in array">Minimum element in array</a><br />
+<a href="/c/source-code/c-program-linear-search" title="c program for linear search">Linear search</a><br />
+<a href="/c/source-code/c-program-binary-search" title="C program for binary search">Binary search</a><br />
+<a href="/c-program-reverse-array" title="C Program To Reverse Array">Reverse array</a><br />
+<a href="/c/source-code/c-program-insert-element-in-array" title="c program to insert an element in an array">Insert element in array</a><br />
+<a href="/c/source-code/c-program-delete-element-from-array" title="c program to delete an element from an array">Delete element from array</a><br />
+<a href="/c/source-code/c-program-merge-two-arrays" title="C program to merge two arrays">Merge arrays</a><br />
+<a href="/c/source-code/c-program-bubble-sort" title="C program for bubble sort algorithm">Bubble sort</a><br />
+<a href="/c/source-code/c-program-insertion-sort" title="C program for insertion sort algorithm">Insertion sort</a><br />
+<a href="/c/source-code/c-program-selection-sort" title="C program for selection sort algorithm">Selection sort</a><br />
+<a href="/c-program-add-matrices" title="C Program To Add Matrices">Add matrices</a><br />
+<a href="/c/source-code/c-program-subtract-matrices" title="C program to subtract matrices">Subtract matrices</a><br />
+<a href="/c-program-transpose-matrix" title="C Program To Transpose A Matrix">Transpose matrix</a><br />
+<a href="/c-program-multiply-matrices" title="C Program To Multiply Matrices">Multiply two matrices</a><br />
+<a href="/c/program/print-string" title="C program print string">Print string</a><br />
+<a href="/c-program-find-string-length" title="C Program To Find String Length">String length</a><br />
+<a href="/c-program-compare-two-strings" title="C Program To Compare Two Strings">Compare strings</a><br />
+<a href="/c/source-code/c-program-copy-strings" title="c program to copy string">Copy string</a><br />
+<a href="/c-program-concatenate-strings" title="C Program To Concatenate Two Strings">Concatenate strings</a><br />
+<a href="/c-program-reverse-string" title="C Program To Reverse String">Reverse string</a><br />
+<a href="/c-program-find-palindrome" title="C Program To Find Palindrome">Find palindrome</a><br />
+<a href="/c/source-code/c-program-remove-vowels-from-string" title="C program to delete vowels from string">Delete vowels</a><br />
+<a href="/c/source-code/c-substring" title="c substring">C substring</a><br />
+<a href="/c/source-code/c-program-check-subsequence" title="C program to check subsequence">Subsequence</a><br />
+<a href="/c/source-code/c-program-sort-string" title="C program to sort a string">Sort a string</a><br />
+<a href="/c/source-code/c-program-remove-spaces-string" title="C program to remove space from string">Remove spaces</a><br />
+<a href="/c/program/c-program-change-case" title="c program to change case">Change case</a><br />
+<a href="/c-program-swap-two-strings" title="C Program To Swap Strings">Swap strings</a><br />
+<a href="/c-program-find-characters-frequency" title="C program to find frequency of characters in a string">Character's frequency</a><br />
+<a href="/c/source-code/c-anagram-program" title="c program to check whether two strings are anagrams">Anagrams</a><br />
+<a href="/c-program-read-file" title="C Program To Read A File">Read file</a><br />
+<a href="/c-program-copy-file" title="C Program To Copy Files">Copy files</a><br />
+<a href="/c-program-merge-two-files" title="C Program To Merge Files">Merge two files</a><br />
+<a href="/c-program-list-files-in-directory" title="C Program To List Files In A Folder/Directory">List files in a directory</a><br />
+<a href="/c-program-delete-file" title="C Program To Delete File">Delete file</a><br />
+<a href="/c-program-generate-random-numbers" title="C Program To Generate Random Numbers">Random numbers</a><br />
+<a href="/c-program-add-two-complex-numbers" title="C Program To Add Complex Numbers">Add complex numbers</a><br />
+<a href="/c/program/print-date" title="C program print date">Print date</a><br />
+<a href="/c-program-get-ip-address" title="C Program To Get IP Address">Get IP address</a><br />
+<a href="/c-program-shutdown-computer" title="C program to shutdown computer">Shutdown computer</a></p>
+  </div>
+</div>
+  </div>
+      </div></div> <!-- /.section, /#sidebar-second -->
+    
+  </div></div> <!-- /#main, /#main-wrapper -->
+
+  
+  <div id="footer-wrapper"><div class="section">
+
+    
+          <footer id="footer" role="contentinfo" class="clearfix">
+          <div class="region region-footer">
+    <div id="block-block-49" class="block block-block">
+
+    
+  <div class="content">
+    <p><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Programming Simplified</span> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</p>
+  </div>
+</div>
+<div id="block-block-9" class="block block-block">
+
+    
+  <div class="content">
+    <p><a href="/">Home</a> | <a href="/about">About Us</a> | <a href="/contact">Contact Us</a> | <a href="/programmer-resources">Programmer Resources</a> | <a href="/sitemap">Site Map</a> | <a href="/privacy">Privacy</a> | <a href="/article/open-source-software" title="Download Software">Download Software</a></p>
+  </div>
+</div>
+  </div>
+      </footer> <!-- /#footer -->
+    
+  </div></div> <!-- /.section, /#footer-wrapper -->
+
+</div></div> <!-- /#page, /#page-wrapper -->
+    <div class="region region-page-bottom">
+    <div style="position: absolute; top: -250px; left: -250px;"><a rel="nofollow" href="http://www.zappanova.com/socialitedead.php?issue=7">randomness</a></div>  </div>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+da2a.targets=[
+{title:"Matrix multiplication in c",url:"http:\/\/www.programmingsimplified.com\/c-program-multiply-matrices"}];
+da2a.html_done=true;if(da2a.script_ready&&!da2a.done)da2a.init();da2a.script_load();
+//--><!]]>
+</script>
+</body>
+</html>
+��,�      Y5DY5D%=Ֆ!Y6��   A:http://www.programmingsimplified.com/c-program-multiply-matrices necko:classified 1 request-method GET request-Accept-Encoding gzip, deflate response-head HTTP/1.1 200 OK
+Date: Mon, 05 Jun 2017 11:44:21 GMT
+Server: Apache
+X-Drupal-Cache: HIT
+Content-Language: en
+Link: </node/81>; rel="shortlink",</c-program-multiply-matrices>; rel="canonical"
+X-Generator: Drupal 7 (http://drupal.org)
+Cache-Control: public, max-age=86400
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: Cookie,Accept-Encoding
+Etag: "1496660805-1"
+Last-Modified: Mon, 05 Jun 2017 11:06:45 GMT
+Content-Type: text/html; charset=utf-8
+ charset UTF-8 uncompressed-len 0 predictor::resource-count 22 predictor::http://www.programmingsimplified.com/sites/default/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/sites/default/files/css/css_sdyyIuqV_D0sgcuYxlQjQRjXrhAHul_ByaHN6dBpqGw.css 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/sites/default/files/css/css_Ds030rLfnsqdi3NJi-7JllRKrDJz3mqdU5yL7SYaOoI.css 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/sites/default/files/css/css_aHxFlgErLhOwUJC26IDHkKZ7KDXyVbALH1ffVfmRelU.css 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/sites/default/files/css/css_2THG1eGiBIizsWFeexsNe1iDifJ00QRS9uSd03rY9co.css 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/sites/default/files/js/js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/sites/default/files/js/js_Ofj7l77ezpDbolpobDa4RheMhVKbTyVzE5npFE8teE4.js 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/sites/default/files/logo_1_0.png 1,1,1496663056,0 predictor::http://www.google.co.in/coop/cse/brand?form=cse-search-box&lang=en 1,1,1496663056,0 predictor::http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/images/c/matrix-multiplication-c.png 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/sites/all/modules/addtoany/images/share_save_171_16.png 1,1,1496663056,0 predictor::http://www.google-analytics.com/analytics.js 1,1,1496663056,0 predictor::http://www.google-analytics.com/r/collect?v=1&_v=j55&a=645769573&t=pageview&_s=1&dl=http%3A%2F%2Fwww.programmingsimplified.com%2Fc-program-multiply-matrices&dr=https%3A%2F%2Fwww.google.co.in&ul=en-us&de=UTF-8&dt=Matrix%20multiplication%20in%20c%20%7C%20Programming%20Simplified&sd=24-bit&sr=1360x663&vp=1295x535&je=0&_u=IEBAAEABI~&jid=2117069197&gjid=2044959332&cid=312569381.1496663068&tid=UA-33793267-1&_gid=1024303894.1496663068&_r=1&z=732135488 1,1,1496663056,0 predictor::https://static.addtoany.com/menu/page.js 1,1,1496663056,0 predictor::http://www.programmingsimplified.com/misc/menu-leaf.png 1,1,1496663056,0 predictor::https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png 1,1,1496663056,0 predictor::https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-0388429284943625.js 1,1,1496663056,0 predictor::http://pagead2.googlesyndication.com/pagead/js/r20170529/r20170110/show_ads_impl.js 1,1,1496663056,0 predictor::https://pagead2.googlesyndication.com/pagead/osd.js 1,1,1496663056,0 predictor::https://static.addtoany.com/menu/svg/icons.21.svg.js 1,1,1496663056,0   �
